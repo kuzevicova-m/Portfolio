@@ -1,20 +1,367 @@
 <!DOCTYPE html>
-<html lang="en">
-<meta charset="UTF-8">
-<title>Page Title</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
-<style>
-</style>
-<script src=""></script>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haf-Paw Daycare | Psí školka v Brně</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET ========== */
+        *,
+        *::before,
+        *::after
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ========== VARIABLES ========== */
+        :root
+        {
+            --purple: #7B2D8E;
+            --purple-light: #A24DBF;
+            --orange: #F5A623;
+            --orange-dark: #E0911A;
+            --pink-bg: #FDE8F;
+            --gradient-hero: linear-gradient(135deg, #F8C8DC 0%, #F5A623 100%);
+            --white: #FFFFFF;
+            --dark: #2D2D2D;
+            --font-heading: 'Baloo 2', cursive;
+            --font-body: 'Nunito', sans-serif;
+        }
+
+        body
+        {
+            font-family: var(--font-body);
+            background-color: var(--pink-bg);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* ========== CARD WRAPPER ========== */
+        .landing-card
+        {
+            max-width: 1100px;
+            width: 100%;
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(123, 45, 142, 0.15);
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar
+        {
+            background: var(--purple);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 40px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .logo
+        {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-paw
+        {
+            font-size: 1.4rem;
+        }
+
+        .nav-links
+        {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a
+        {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            padding-bottom: 4px;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover
+        {
+            opacity: 0.85;
+        }
+
+        .nav-links a.active
+        {
+            border-bottom: 2px solid var(--white);
+        }
+
+        .nav-search
+        {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-search input
+        {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: none;
+            font-size: 0.9rem;
+            font-family: var(--font-body);
+            outline: none;
+            width: 160px;
+        }
+
+        .social-icons
+        {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icons a
+        {
+            color: var(--white);
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .social-icons a:hover
+        {
+            transform: scale(1.15);
+        }
+
+        /* ========== HERO ========== */
+        .hero
+        {
+            background: var(--gradient-hero);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 50px;
+            position: relative;
+            overflow: hidden;
+            min-height: 480px;
+        }
+
+        /* Doodle paw prints background */
+        .hero::before
+        {
+            content: '🐾  🦴  🐾  🦴  🐾  🦴  🐾  🦴  🐾  🦴  🐾  🦴  🐾';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            font-size: 2rem;
+            opacity: 0.08;
+            line-height: 3.5rem;
+            word-spacing: 2rem;
+            pointer-events: none;
+            transform: rotate(-15deg);
+            transform-origin: top left;
+        }
+
+        .hero-content
+        {
+            max-width: 520px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1
+        {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--purple);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-content p
+        {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--dark);
+            margin-bottom: 32px;
+            max-width: 420px;
+        }
+
+        .btn-cta
+        {
+            display: inline-block;
+            background: var(--purple);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.25s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-cta:hover
+        {
+            background: var(--purple-light);
+            transform: translateY(-2px);
+        }
+
+        /* Hero image area */
+        .hero-image
+        {
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+
+        .hero-image .placeholder-img
+        {
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 12px 40px rgba(123, 45, 142, 0.12);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 860px)
+        {
+            .hero
+            {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 28px;
+            }
+
+            .hero-content
+            {
+                max-width: 100%;
+            }
+
+            .hero-content h1
+            {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p
+            {
+                max-width: 100%;
+            }
+
+            .hero-image .placeholder-img
+            {
+                width: 240px;
+                height: 240px;
+                font-size: 4rem;
+                margin-top: 32px;
+            }
+        }
+
+        @media (max-width: 640px)
+        {
+            .navbar
+            {
+                padding: 14px 20px;
+                justify-content: center;
+            }
+
+            .nav-links
+            {
+                gap: 16px;
+            }
+
+            .nav-search
+            {
+                display: none;
+            }
+
+            .hero
+            {
+                padding: 32px 20px;
+            }
+
+            .hero-content h1
+            {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
 <body>
 
-<img src="img_la.jpg" alt="LA" style="width:100%">
+<div class="landing-card">
 
-<div class="">
- <h1>This is a Heading</h1>
- <p>This is a paragraph.</p>
- <p>This is another paragraph.</p>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-paw">🐾</span> Haf-Paw
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#" class="active">Domů</a></li>
+            <li><a href="#">O nás</a></li>
+            <li><a href="#">Služby</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+
+        <div class="nav-search">
+            <input type="text" placeholder="Hledat…">
+            <div class="social-icons">
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="YouTube">🎬</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Váš pejsek si&nbsp;u&nbsp;nás užije den plný radosti!</h1>
+            <p>
+                Haf-Paw Daycare je psí školka v Brně, kde se o vašeho
+                čtyřnohého parťáka postaráme s láskou. Socializace,
+                venčení, hry a odpočinek — vše pod dohledem zkušeného týmu.
+            </p>
+            <a href="#" class="btn-cta">Rezervovat místo</a>
+        </div>
+
+        <div class="hero-image">
+            <!-- Sem vlož vlastní fotku pejska:
+                 <img src="dog.jpg" alt="Šťastný pejsek v Haf-Paw Daycare" 
+                      style="width:360px; height:360px; object-fit:cover; border-radius:50%;"> 
+            -->
+            <div class="placeholder-img">🐶</div>
+        </div>
+    </section>
+
 </div>
 
 </body>
