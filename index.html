@@ -6,22 +6,29 @@
     <title>Michaela Kuzevičová | Portfolio</title>
 
     <style>
+        /* Reset */
         *
         {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        /* ===== CELÁ STRÁNKA ===== */
         body
         {
             font-family: Arial, sans-serif;
             color: #fff;
             min-height: 100vh;
+
+            /* Tvůj zelený vlnkový obrázek na pozadí */
             background-image: url('pozadi.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
+        /* ===== NAVIGACE ===== */
         nav
         {
             display: flex;
@@ -55,13 +62,21 @@
         /* ===== HERO SEKCE ===== */
         .hero
         {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             padding: 80px 40px;
             min-height: calc(100vh - 68px);
+            text-align: left;
+        }
+
+        /* Obal — drží text a fotku u sebe uprostřed */
+        .hero-inner
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            max-width: 900px;
+            margin: 0 auto;
             flex-wrap: wrap;
-            gap: 40px;
         }
 
         /* Levá strana — texty */
@@ -83,7 +98,6 @@
             font-size: 1.05rem;
             line-height: 1.7;
             margin-bottom: 12px;
-            /* Lehký stín pro čitelnost na barevném pozadí */
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -174,10 +188,14 @@
         /* ===== MOBIL ===== */
         @media (max-width: 768px)
         {
-            .hero
+            .hero-inner
             {
                 flex-direction: column;
                 text-align: center;
+            }
+
+            .hero
+            {
                 padding: 40px 20px;
             }
 
@@ -223,32 +241,37 @@
     <!-- HERO SEKCE -->
     <section class="hero">
 
-        <!-- Levá strana — texty -->
-        <div class="hero-text">
-            <h1>Michaela Kuzevičová</h1>
-            <p>
-                Studentka IT s vášní pro technologie. Baví mě propojovat
-                svět hardwaru, grafiky a programování — a neustále se učím nové věci.
-            </p>
+        <!-- Obal — drží obsah u sebe uprostřed -->
+        <div class="hero-inner">
 
-            <ul>
-                <li>Práce s hardwarem — stavba a diagnostika PC</li>
-                <li>Grafické programy — Photoshop, Illustrator, Figma</li>
-                <li>Programování — HTML, CSS a další (učím se)</li>
-            </ul>
+            <!-- Levá strana — texty -->
+            <div class="hero-text">
+                <h1>Michaela Kuzevičová</h1>
+                <p>
+                    Studentka IT s vášní pro technologie. Baví mě propojovat
+                    svět hardwaru, grafiky a programování — a neustále se učím nové věci.
+                </p>
 
-            <a href="mailto:tvuj@email.cz" class="btn">Kontaktuj mě</a>
-        </div>
+                <ul>
+                    <li>Práce s hardwarem — stavba a diagnostika PC</li>
+                    <li>Grafické programy — Photoshop, Illustrator, Figma</li>
+                    <li>Programování — HTML, CSS a další (učím se)</li>
+                </ul>
 
-        <!-- Pravá strana — tvoje fotka -->
-        <div class="hero-image">
-            <!--
-                Až budeš mít fotku, odkomentuj tento řádek
-                a smaž placeholder pod ním:
+                <a href="mailto:tvuj@email.cz" class="btn">Kontaktuj mě</a>
+            </div>
 
-                <img src="moje-fotka.jpg" alt="Michaela Kuzevičová">
-            -->
-          <img src="moje-fotka.jpg" alt="já sedící u počítače">
+            <!-- Pravá strana — fotka -->
+            <div class="hero-image">
+                <!--
+                    Až budeš mít fotku, odkomentuj tento řádek
+                    a smaž placeholder pod ním:
+
+                    <img src="moje-fotka.jpg" alt="Michaela Kuzevičová">
+                -->
+                <img src="moje-fotka.jpg" alt="jak sedím u počítače">
+            </div>
+
         </div>
 
     </section>
