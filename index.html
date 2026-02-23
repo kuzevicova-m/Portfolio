@@ -62,32 +62,32 @@
         /* ===== HERO SEKCE ===== */
         .hero
         {
-            padding: 80px 40px;
+            padding: 40px 60px 60px 60px;
             min-height: calc(100vh - 68px);
-            text-align: left;
+            display: flex;
+            align-items: flex-end;
         }
 
-        /* Obal — drží text a fotku u sebe uprostřed */
+        /* Obal — text vlevo, fotka vpravo */
         .hero-inner
         {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 60px;
-            max-width: 900px;
-            margin: 0 auto;
+            align-items: flex-end;
+            justify-content: space-between;
+            width: 100%;
+            gap: 40px;
             flex-wrap: wrap;
         }
 
         /* Levá strana — texty */
         .hero-text
         {
-            max-width: 550px;
+            max-width: 600px;
         }
 
         .hero-text h1
         {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             line-height: 1.2;
             margin-bottom: 20px;
             text-transform: uppercase;
@@ -95,9 +95,9 @@
 
         .hero-text p
         {
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             line-height: 1.7;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -110,7 +110,7 @@
 
         .hero-text ul li
         {
-            font-size: 1rem;
+            font-size: 1.05rem;
             padding: 4px 0;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
@@ -147,8 +147,8 @@
 
         .hero-image img
         {
-            width: 320px;
-            height: 320px;
+            width: 300px;
+            height: 300px;
             object-fit: cover;
             border-radius: 50%;
             border: 4px solid rgba(255, 255, 255, 0.5);
@@ -158,8 +158,8 @@
         /* Placeholder — dokud nemáš fotku */
         .photo-placeholder
         {
-            width: 320px;
-            height: 320px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.15);
             border: 4px solid rgba(255, 255, 255, 0.4);
@@ -188,15 +188,17 @@
         /* ===== MOBIL ===== */
         @media (max-width: 768px)
         {
-            .hero-inner
-            {
-                flex-direction: column;
-                text-align: center;
-            }
-
             .hero
             {
                 padding: 40px 20px;
+                align-items: center;
+            }
+
+            .hero-inner
+            {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
 
             .hero-text h1
@@ -241,7 +243,6 @@
     <!-- HERO SEKCE -->
     <section class="hero">
 
-        <!-- Obal — drží obsah u sebe uprostřed -->
         <div class="hero-inner">
 
             <!-- Levá strana — texty -->
@@ -269,7 +270,7 @@
 
                     <img src="moje-fotka.jpg" alt="Michaela Kuzevičová">
                 -->
-                <img src="moje-fotka.jpg" alt="jak sedím u počítače">
+                <img src="moje-fotka.jpg">
             </div>
 
         </div>
