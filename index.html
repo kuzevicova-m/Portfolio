@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haf-Paw Daycare | Psí školka Brno</title>
+    <title>Michaela Kuzevičová | Portfolio</title>
 
     <style>
         *
@@ -12,37 +12,38 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-       
         body
         {
             font-family: Arial, sans-serif;
-            background-color: #FFF5F;
-            color: #333;
+            color: #fff;
+            min-height: 100vh;
+            background-image: url('pozadi.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         nav
         {
-            background-color: #7B2D8E;
-            padding: 16px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 20px 40px;
+            background-color: rgba(0, 0, 0, 0.2);
         }
 
         .logo
         {
-            color: white;
             font-size: 1.4rem;
             font-weight: bold;
+            color: #fff;
             text-decoration: none;
         }
 
         .nav-links a
         {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 24px;
             font-size: 0.95rem;
         }
 
@@ -51,41 +52,69 @@
             text-decoration: underline;
         }
 
+        /* ===== HERO SEKCE ===== */
         .hero
         {
-            background: linear-gradient(135deg, #F8C8DC, #F5A623);
-            padding: 60px 24px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 40px;
+            min-height: calc(100vh - 68px);
+            flex-wrap: wrap;
+            gap: 40px;
         }
 
-        .hero h1
+        /* Levá strana — texty */
+        .hero-text
         {
-            font-size: 2.2rem;
-            color: #7B2D8E;
-            margin-bottom: 16px;
+            max-width: 550px;
         }
 
-        .hero p
+        .hero-text h1
+        {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-text p
         {
             font-size: 1.05rem;
-            max-width: 500px;
-            margin: 0 auto 28px auto;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            /* Lehký stín pro čitelnost na barevném pozadí */
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .hero .dog-icon
+        /* Seznam dovedností */
+        .hero-text ul
         {
-            font-size: 5rem;
-            margin-bottom: 24px;
+            list-style: none;
+            margin-bottom: 28px;
         }
 
+        .hero-text ul li
+        {
+            font-size: 1rem;
+            padding: 4px 0;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-text ul li::before
+        {
+            content: '✔ ';
+            color: #2ECC71;
+        }
+
+        /* Tlačítko */
         .btn
         {
             display: inline-block;
-            background-color: #7B2D8E;
-            color: white;
-            padding: 12px 32px;
-            border-radius: 25px;
+            background-color: #2ECC71;
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1rem;
@@ -93,125 +122,141 @@
 
         .btn:hover
         {
-            background-color: #9B4DB8;
+            background-color: #27AE60;
         }
 
-        .services
+        /* Pravá strana — fotka */
+        .hero-image
         {
-            padding: 40px 24px;
-            text-align: center;
+            flex-shrink: 0;
         }
 
-        .services h2
+        .hero-image img
         {
-            font-size: 1.6rem;
-            color: #7B2D8E;
-            margin-bottom: 24px;
+            width: 320px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .cards
+        /* Placeholder — dokud nemáš fotku */
+        .photo-placeholder
         {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 4px solid rgba(255, 255, 255, 0.4);
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        .card
-        {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            width: 250px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .card .icon
-        {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-        }
-
-        .card h3
-        {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: #7B2D8E;
-        }
-
-        .card p
-        {
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
+        /* ===== PATIČKA ===== */
         footer
         {
-            background-color: #7B2D8E;
-            color: white;
             text-align: center;
-            padding: 20px;
-            font-size: 0.85rem;
+            padding: 16px;
+            font-size: 0.8rem;
+            background-color: rgba(0, 0, 0, 0.2);
         }
 
         footer a
         {
-            color: #F5A623;
+            color: #2ECC71;
             text-decoration: none;
+        }
+
+        /* ===== MOBIL ===== */
+        @media (max-width: 768px)
+        {
+            .hero
+            {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+
+            .hero-text h1
+            {
+                font-size: 2rem;
+            }
+
+            .hero-text ul
+            {
+                text-align: left;
+                display: inline-block;
+            }
+
+            .photo-placeholder,
+            .hero-image img
+            {
+                width: 220px;
+                height: 220px;
+            }
+
+            nav
+            {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVIGACE -->
     <nav>
-        <a href="#" class="logo">🐾 Haf-Paw</a>
+        <a href="#" class="logo">Michaela K.</a>
         <div class="nav-links">
             <a href="#">Domů</a>
-            <a href="#">O nás</a>
-            <a href="#">Služby</a>
+            <a href="#">O mně</a>
+            <a href="#">Dovednosti</a>
             <a href="#">Kontakt</a>
         </div>
     </nav>
 
+    <!-- HERO SEKCE -->
     <section class="hero">
-        <div class="dog-icon">🐶</div>
-        <h1>Psí školka v Brně</h1>
-        <p>
-            Postaráme se o vašeho pejska s láskou.
-            Hry, socializace, venčení a odpočinek —
-            vše pod dohledem zkušeného týmu.
-        </p>
-        <a href="#" class="btn">Rezervovat místo</a>
-    </section>
 
-    <section class="services">
-        <h2>Co nabízíme</h2>
-        <div class="cards">
+        <!-- Levá strana — texty -->
+        <div class="hero-text">
+            <h1>Michaela Kuzevičová</h1>
+            <p>
+                Studentka IT s vášní pro technologie. Baví mě propojovat
+                svět hardwaru, grafiky a programování — a neustále se učím nové věci.
+            </p>
 
-            <div class="card">
-                <div class="icon">🎾</div>
-                <h3>Denní hlídání</h3>
-                <p>Celodenní program plný her a zábavy pro vašeho mazlíčka.</p>
-            </div>
+            <ul>
+                <li>Práce s hardwarem — stavba a diagnostika PC</li>
+                <li>Grafické programy — Photoshop, Illustrator, Figma</li>
+                <li>Programování — HTML, CSS a další (učím se)</li>
+            </ul>
 
-            <div class="card">
-                <div class="icon">🌳</div>
-                <h3>Venčení</h3>
-                <p>Pravidelné procházky v přírodě v okolí Brna.</p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🛁</div>
-                <h3>Péče a hygiena</h3>
-                <p>Koupání, česání a základní péče o srst.</p>
-            </div>
-
+            <a href="mailto:tvuj@email.cz" class="btn">Kontaktuj mě</a>
         </div>
+
+        <!-- Pravá strana — tvoje fotka -->
+        <div class="hero-image">
+            <!--
+                Až budeš mít fotku, odkomentuj tento řádek
+                a smaž placeholder pod ním:
+
+                <img src="moje-fotka.jpg" alt="Michaela Kuzevičová">
+            -->
+            <div class="photo-placeholder">Tvoje fotka</div>
+        </div>
+
     </section>
 
+    <!-- PATIČKA -->
     <footer>
-        <p>© 2026 Haf-Paw Daycare, Brno |
-            <a href="mailto:info@hafpaw.cz">info@hafpaw.cz</a>
+        <p>© 2026 Michaela Kuzevičová |
+            <a href="https://github.com/tvuj-github">GitHub</a>
         </p>
     </footer>
 
