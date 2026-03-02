@@ -24,6 +24,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         /* ===== NAVIGACE ===== */
@@ -60,19 +61,15 @@
         /* ===== HERO SEKCE ===== */
         .hero
         {
-            /* Výška přes celou obrazovku mínus navigace */
             min-height: calc(100vh - 68px);
             padding: 40px 20px;
-            
-            /* Poskládá text a fotku pod sebe a vycentruje je */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 60px; /* Mezera mezi textem a fotkou */
+            gap: 20px;
         }
 
-        /* Text uprostřed nahoře */
         .hero-text
         {
             text-align: center;
@@ -83,7 +80,7 @@
         {
             font-size: 4rem;
             line-height: 1.2;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             text-transform: uppercase;
         }
 
@@ -91,15 +88,14 @@
         {
             font-size: 1.35rem;
             line-height: 1.7;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
 
-        /* Seznam dovedností — box vycentrovaný, ale text v něm zarovnaný vlevo */
         .hero-text ul
         {
             list-style: none;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             display: inline-block;
             text-align: left;
         }
@@ -117,7 +113,6 @@
             color: #2ECC71;
         }
 
-        /* Tlačítko */
         .btn
         {
             display: inline-block;
@@ -135,7 +130,6 @@
             background-color: #27AE60;
         }
 
-        /* Fotka pod textem */
         .hero-image img
         {
             width: 280px;
@@ -146,7 +140,6 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
 
-        /* Placeholder — dokud nemáš fotku */
         .photo-placeholder
         {
             width: 280px;
@@ -159,6 +152,69 @@
             justify-content: center;
             font-size: 1rem;
             color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ===== PORTFOLIO SEKCE (WEB + GRAFIKA) ===== */
+        .portfolio-section
+        {
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .portfolio-section h2
+        {
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            letter-spacing: 4px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Grid na 3 fotky vedle sebe */
+        .portfolio-grid
+        {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Jednotlivý placeholder / fotka */
+        .portfolio-item
+        {
+            width: 340px;
+            height: 220px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .portfolio-item:hover
+        {
+            transform: scale(1.03);
+            border-color: #2ECC71;
+        }
+
+        .portfolio-item img
+        {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Oddělovač mezi sekcemi WEB a GRAFIKA */
+        .section-spacer
+        {
+            height: 60px;
         }
 
         /* ===== PATIČKA ===== */
@@ -179,11 +235,6 @@
         /* ===== MOBIL ===== */
         @media (max-width: 768px)
         {
-            .hero
-            {
-                gap: 40px;
-            }
-
             .hero-text h1
             {
                 font-size: 2.2rem;
@@ -217,6 +268,28 @@
                 flex-direction: column;
                 gap: 10px;
             }
+
+            .portfolio-section
+            {
+                padding: 50px 20px;
+            }
+
+            .portfolio-section h2
+            {
+                font-size: 2rem;
+            }
+
+            .portfolio-item
+            {
+                width: 100%;
+                max-width: 340px;
+                height: 200px;
+            }
+
+            .section-spacer
+            {
+                height: 30px;
+            }
         }
     </style>
 </head>
@@ -235,34 +308,78 @@
 
     <!-- HERO SEKCE -->
     <section class="hero">
-
-        <!-- Text uprostřed nahoře -->
         <div class="hero-text">
             <h1>Michaela Kuzevičová</h1>
             <p>
                 Studentka IT s vášní pro technologie. Baví mě propojovat
                 svět hardwaru, grafiky a programování — a neustále se učím nové věci.
             </p>
-
             <ul>
                 <li>Práce s hardwarem — stavba a diagnostika PC</li>
                 <li>Grafické programy — Photoshop, Illustrator, Figma</li>
                 <li>Programování — HTML, CSS a další (učím se)</li>
             </ul>
-            <br>
             <a href="mailto:tvuj@email.cz" class="btn">Kontaktuj mě</a>
         </div>
 
-        <!-- Fotka uprostřed pod textem -->
         <div class="hero-image">
-            <!--
-                Až budeš mít fotku, odkomentuj tento řádek
-                a smaž placeholder pod ním:
-                <img src="moje-fotka.jpg" alt="Michaela Kuzevičová">
-            -->
-            <img src="moje-fotka.jpg">
+            <div class="photo-placeholder">Tvoje fotka</div>
         </div>
+    </section>
 
+    <!-- ===== WEB SEKCE ===== -->
+    <section class="portfolio-section">
+        <h2>Web</h2>
+        <div class="portfolio-grid">
+
+            <!-- Web 1 -->
+            <div class="portfolio-item">
+                <!-- <img src="web1.jpg" alt="Web projekt 1"> -->
+                Web 1
+            </div>
+
+            <!-- Web 2 -->
+            <div class="portfolio-item">
+                <!-- <img src="web2.jpg" alt="Web projekt 2"> -->
+                Web 2
+            </div>
+
+            <!-- Web 3 -->
+            <div class="portfolio-item">
+                <!-- <img src="web3.jpg" alt="Web projekt 3"> -->
+                Web 3
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Mezera mezi sekcemi -->
+    <div class="section-spacer"></div>
+
+    <!-- ===== GRAFIKA SEKCE ===== -->
+    <section class="portfolio-section">
+        <h2>Grafika</h2>
+        <div class="portfolio-grid">
+
+            <!-- Grafika 1 -->
+            <div class="portfolio-item">
+                <!-- <img src="grafika1.jpg" alt="Grafický výtvor 1"> -->
+                Grafika 1
+            </div>
+
+            <!-- Grafika 2 -->
+            <div class="portfolio-item">
+                <!-- <img src="grafika2.jpg" alt="Grafický výtvor 2"> -->
+                Grafika 2
+            </div>
+
+            <!-- Grafika 3 -->
+            <div class="portfolio-item">
+                <!-- <img src="grafika3.jpg" alt="Grafický výtvor 3"> -->
+                Grafika 3
+            </div>
+
+        </div>
     </section>
 
     <!-- PATIČKA -->
