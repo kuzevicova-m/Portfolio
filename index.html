@@ -170,7 +170,6 @@
             text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         }
 
-        /* Grid na 3 fotky vedle sebe */
         .portfolio-grid
         {
             display: flex;
@@ -181,7 +180,7 @@
             margin: 0 auto;
         }
 
-        /* Jednotlivý placeholder / fotka */
+        /* Společný styl pro div i odkaz */
         .portfolio-item
         {
             width: 340px;
@@ -195,6 +194,7 @@
             justify-content: center;
             font-size: 1rem;
             color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
@@ -211,7 +211,6 @@
             object-fit: cover;
         }
 
-        /* Oddělovač mezi sekcemi WEB a GRAFIKA */
         .section-spacer
         {
             height: 60px;
@@ -323,7 +322,7 @@
         </div>
 
         <div class="hero-image">
-            <img src="moje-fotka.jpg">
+            <img src="moje.fotka.jpg">
         </div>
     </section>
 
@@ -331,18 +330,30 @@
     <section class="portfolio-section">
         <h2>Web</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-item">
-                   <a href="https://michaela-kuzevicova.endora.site/index12.html" target="_blank" class="portfolio-item">
-                <img src="web1.png">
-            </div>
-            <div class="portfolio-item">
-                <a href="https://michaela-kuzevicova.endora.site/index14.html" target="_blank" class="portfolio-item">
-                <img src="web2.png">
-            </div>
-            <div class="portfolio-item">
-                <a href="https://michaela-kuzevicova.endora.site/index.html.20.html" target="_blank" class="portfolio-item">
-                <img src="web3.png">
-            </div>
+
+            <!--
+                Každá fotka je odkaz na svou vlastní stránku.
+                Nahraď href="..." skutečnou adresou daného webu.
+                Nahraď src="..." cestou ke screenshotu.
+            -->
+
+            <!-- Web 1 -->
+            <a href="https://michaela-kuzevicova.endora.site/index12.html" target="_blank" class="portfolio-item">
+                <img src="web1.png" alt="Web projekt 1">
+                Web 1
+            </a>
+
+            <!-- Web 2 -->
+            <a href="https://michaela-kuzevicova.endora.site/index14.html" target="_blank" class="portfolio-item">
+                <img src="web2.png" alt="Web projekt 2">
+                Web 2
+            </a>
+
+            <!-- Web 3 -->
+            <a href="https://michaela-kuzevicova.endora.site/index.html20.html" target="_blank" class="portfolio-item">
+                <img src="web3.png" alt="Web projekt 3">
+                Web 3
+            </a>
 
         </div>
     </section>
@@ -357,17 +368,20 @@
 
             <!-- Grafika 1 -->
             <div class="portfolio-item">
-                <img src="koule.png">
+                <img src="koule.png" alt="Grafický výtvor 1">
+                Grafika 1
             </div>
 
             <!-- Grafika 2 -->
             <div class="portfolio-item">
-                <img src="ptak.png">
+                <img src="ptak.png" alt="Grafický výtvor 2">
+                Grafika 2
             </div>
 
             <!-- Grafika 3 -->
             <div class="portfolio-item">
-            <img src="vrabec.png">
+                <img src="vrabec.png" alt="Grafický výtvor 3">
+                Grafika 3
             </div>
 
         </div>
