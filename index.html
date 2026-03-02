@@ -6,15 +6,12 @@
     <title>Michaela Kuzevičová | Portfolio</title>
 
     <style>
-        /* Reset */
         *
         {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        /* ===== CELÁ STRÁNKA ===== */
         body
         {
             font-family: Arial, sans-serif;
@@ -27,8 +24,6 @@
             background-attachment: fixed;
             overflow-x: hidden;
         }
-
-        /* ===== NAVIGACE ===== */
         nav
         {
             display: flex;
@@ -58,8 +53,6 @@
         {
             text-decoration: underline;
         }
-
-        /* ===== HERO SEKCE ===== */
         .hero
         {
             min-height: calc(100vh - 68px);
@@ -154,8 +147,6 @@
             font-size: 1rem;
             color: rgba(255, 255, 255, 0.7);
         }
-
-        /* ===== PORTFOLIO SEKCE (WEB + GRAFIKA) ===== */
         .portfolio-section
         {
             width: 100%;
@@ -181,8 +172,6 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-
-        /* Společný styl — funguje pro <a> i <div> */
         .portfolio-item
         {
             flex: 0 0 320px;
@@ -205,8 +194,6 @@
             transform: scale(1.03);
             border-color: #2ECC71;
         }
-
-        /* Obrázek uvnitř boxu — vždy vyplní celý box */
         .portfolio-item img
         {
             width: 100%;
@@ -220,7 +207,6 @@
             height: 60px;
         }
 
-        /* ===== PATIČKA ===== */
         footer
         {
             width: 100%;
@@ -236,7 +222,6 @@
             text-decoration: none;
         }
 
-        /* ===== MOBIL ===== */
         @media (max-width: 1024px)
         {
             .portfolio-grid
@@ -306,8 +291,6 @@
     </style>
 </head>
 <body>
-
-    <!-- NAVIGACE -->
     <nav>
         <a href="#" class="logo">Michaela K.</a>
         <div class="nav-links">
@@ -317,8 +300,6 @@
             <a href="#">Kontakt</a>
         </div>
     </nav>
-
-    <!-- HERO SEKCE -->
     <section class="hero">
         <div class="hero-text">
             <h1>Michaela Kuzevičová</h1>
@@ -338,8 +319,6 @@
            <img src="moje-fotka.jpg">
         </div>
     </section>
-
-    <!-- ===== WEB SEKCE ===== -->
     <section class="portfolio-section">
         <h2>Web</h2>
         <div class="portfolio-grid">
@@ -358,11 +337,8 @@
 
         </div>
     </section>
-
-    <!-- Mezera mezi sekcemi -->
     <div class="section-spacer"></div>
 
-    <!-- ===== GRAFIKA SEKCE ===== -->
     <section class="portfolio-section">
         <h2>Grafika</h2>
         <div class="portfolio-grid">
@@ -381,8 +357,6 @@
 
         </div>
     </section>
-
-    <!-- PATIČKA -->
     <footer>
         <p>© 2026 Michaela Kuzevičová |
             <a href="https://github.com/tvuj-github">GitHub</a>
