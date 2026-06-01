@@ -69,7 +69,7 @@ document.getElementById("zlata").onclick = function() {
         zprava("✨ Štěstí! +100 sušenek");
     } else {
         susenky = Math.max(0, susenky - 100);
-        zprava("💀 Smůla! -50 sušenek");
+        zprava("💀 Smůla! -100 sušenek");
     }
     vykresli();
 };
