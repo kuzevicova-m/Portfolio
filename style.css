@@ -1,0 +1,75 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 50px;
+    color: #ff6ec7;
+    text-shadow: 0 0 15px #ff6ec7, 0 0 30px #ff6ec7;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+}
+
+#skore {
+    color: #ffe600;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+#susenka {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    font-size: 90px;
+    background: radial-gradient(circle at 30% 30%, #ffb347, #c98a4b, #7a4a1d);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 30px #ffb347, 0 0 60px #ff6ec7;
+    transition: transform 0.1s;
+}
+
+#susenka:hover { transform: scale(1.05); }
+#susenka:active { transform: scale(0.92); }
+
+.obchod {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.obchod button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid #ff6ec7;
+    border-radius: 12px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: 0.2s;
+}
+
+.obchod button:hover {
+    background: #ff6ec7;
+    box-shadow: 0 0 20px #ff6ec7;
+}
+
+#hlaska {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffe600;
+    min-height: 25px;
+}
+
+

@@ -2,367 +2,47 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michaela Kuzevičová | Portfolio</title>
-
-    <style>
-        *
-        {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body
-        {
-            font-family: Arial, sans-serif;
-            color: #fff;
-            min-height: 100vh;
-            background-image: url('pozadi.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            overflow-x: hidden;
-        }
-        nav
-        {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 40px;
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-        .logo
-        {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .nav-links a
-        {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 24px;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover
-        {
-            text-decoration: underline;
-        }
-        .hero
-        {
-            min-height: calc(100vh - 68px);
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .hero-text
-        {
-            text-align: center;
-            max-width: 800px;
-        }
-
-        .hero-text h1
-        {
-            font-size: 4rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .hero-text p
-        {
-            font-size: 1.35rem;
-            line-height: 1.7;
-            margin-bottom: 16px;
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-text ul
-        {
-            list-style: none;
-            margin-bottom: 24px;
-            display: inline-block;
-            text-align: left;
-        }
-
-        .hero-text ul li
-        {
-            font-size: 1.25rem;
-            padding: 5px 0;
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-text ul li::before
-        {
-            content: '✔ ';
-            color: #2ECC71;
-        }
-
-        .btn
-        {
-            display: inline-block;
-            background-color: #2ECC71;
-            color: #fff;
-            padding: 16px 42px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.15rem;
-        }
-
-        .btn:hover
-        {
-            background-color: #27AE60;
-        }
-
-        .hero-image img
-        {
-            width: 280px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .photo-placeholder
-        {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.15);
-            border: 4px solid rgba(255, 255, 255, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .portfolio-section
-        {
-            width: 100%;
-            padding: 80px 40px;
-            text-align: center;
-        }
-
-        .portfolio-section h2
-        {
-            font-size: 3rem;
-            text-transform: uppercase;
-            margin-bottom: 50px;
-            letter-spacing: 4px;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .portfolio-grid
-        {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: nowrap;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .portfolio-item
-        {
-            flex: 0 0 320px;
-            height: 220px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .portfolio-item:hover
-        {
-            transform: scale(1.03);
-            border-color: #2ECC71;
-        }
-        .portfolio-item img
-        {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .section-spacer
-        {
-            height: 60px;
-        }
-
-        footer
-        {
-            width: 100%;
-            text-align: center;
-            padding: 16px;
-            font-size: 0.8rem;
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-        footer a
-        {
-            color: #2ECC71;
-            text-decoration: none;
-        }
-
-        @media (max-width: 1024px)
-        {
-            .portfolio-grid
-            {
-                flex-wrap: wrap;
-            }
-
-            .portfolio-item
-            {
-                flex: 0 0 90%;
-                max-width: 400px;
-                height: 200px;
-            }
-        }
-
-        @media (max-width: 768px)
-        {
-            .hero-text h1
-            {
-                font-size: 2.2rem;
-            }
-
-            .hero-text p
-            {
-                font-size: 1.1rem;
-            }
-
-            .hero-text ul li
-            {
-                font-size: 1rem;
-            }
-
-            .btn
-            {
-                font-size: 1rem;
-                padding: 14px 36px;
-            }
-
-            .photo-placeholder,
-            .hero-image img
-            {
-                width: 220px;
-                height: 220px;
-            }
-
-            nav
-            {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .portfolio-section
-            {
-                padding: 50px 20px;
-            }
-
-            .portfolio-section h2
-            {
-                font-size: 2rem;
-            }
-
-            .section-spacer
-            {
-                height: 30px;
-            }
-        }
-    </style>
+    <title>Cookie Clicker 🍪</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <a href="#" class="logo">Michaela K.</a>
-        <div class="nav-links">
-            <a href="#">Domů</a>
-            <a href="#">O mně</a>
-            <a href="#">Dovednosti</a>
-            <a href="#">Kontakt</a>
-        </div>
-    </nav>
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Michaela Kuzevičová</h1>
-            <p>
-                Studentka IT s vášní pro technologie. Baví mě propojovat
-                svět hardwaru, grafiky a programování — a neustále se učím nové věci.
-            </p>
-            <ul>
-                <li>Práce s hardwarem — stavba a diagnostika PC</li>
-                <li>Grafické programy — Photoshop, Illustrator, Figma</li>
-                <li>Programování — HTML, CSS a další (učím se)</li>
-            </ul>
-            <a href="mailto:tvuj@email.cz" class="btn">Kontaktuj mě</a>
-        </div>
 
-        <div class="hero-image">
-           <img src="moje-fotka.jpg">
-        </div>
-    </section>
-    <section class="portfolio-section">
-        <h2>Web</h2>
-        <div class="portfolio-grid">
+    <h1>Cookie Clicker</h1>
 
-            <a href="https://michaela-kuzevicova.endora.site/index12.html" target="_blank" class="portfolio-item">
-                <img src="web1.png" alt="Web projekt 1">
-            </a>
+    <div class="info">
+        <p>Sušenek: <span id="skore">0</span></p>
+        <p class="malé">za sekundu: <span id="zaSekundu">0</span> | za klik: <span id="zaKlikInfo">1</span></p>
+    </div>
 
-            <a href="https://michaela-kuzevicova.endora.site/index14.html" target="_blank" class="portfolio-item">
-                <img src="web2.png" alt="Web projekt 2">
-            </a>
+    <div class="susenka-box">
+        <button id="susenka">🍪</button>
+    </div>
 
-            <a href="https://michaela-kuzevicova.endora.site/index.html20.html" target="_blank" class="portfolio-item">
-                <img src="web3.png" alt="Web projekt 3">
-            </a>
+    <h2>Obchod</h2>
+    <div class="obchod">
+        <button id="babicka">
+            <span class="ikona">👵</span>
+            <span class="nazev">Babička</span>
+            <span class="cena">Cena: <span id="cenaBabicky">10</span></span>
+        </button>
 
-        </div>
-    </section>
-    <div class="section-spacer"></div>
+        <button id="tovarna">
+            <span class="ikona">🏭</span>
+            <span class="nazev">Továrna</span>
+            <span class="cena">Cena: <span id="cenaTovarny">50</span></span>
+        </button>
 
-    <section class="portfolio-section">
-        <h2>Grafika</h2>
-        <div class="portfolio-grid">
+        <button id="zlata">
+            <span class="ikona">✨</span>
+            <span class="nazev">Zlatá sušenka</span>
+            <span class="cena">Risk!</span>
+        </button>
+    </div>
 
-            <div class="portfolio-item">
-                <img src="koule.png" alt="Grafický výtvor 1">
-            </div>
+    <p id="hlaska"></p>
 
-            <div class="portfolio-item">
-                <img src="ptak.png" alt="Grafický výtvor 2">
-            </div>
-
-            <div class="portfolio-item">
-                <img src="vrabec.png" alt="Grafický výtvor 3">
-            </div>
-
-        </div>
-<a href="bootstrap.html" class="btn btn-primary">🐕 Poznaj Bellu</a>
-    </section>
-    <footer>
-        <p>© 2026 Michaela Kuzevičová |
-            <a href="https://github.com/tvuj-github">GitHub</a>
-        </p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
+
+
