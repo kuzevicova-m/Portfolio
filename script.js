@@ -26,7 +26,6 @@ function zprava(text) {
     setTimeout(() => { hlaska.textContent = ""; }, 2000);
 }
 
-// klik na sušenku + animace +1
 susenkaBtn.onclick = function(e) {
     susenky += zaKlik;
     vykresli();
@@ -40,7 +39,6 @@ susenkaBtn.onclick = function(e) {
     setTimeout(() => plus.remove(), 1000);
 };
 
-// babička – přidává +1 za klik
 document.getElementById("babicka").onclick = function() {
     if (susenky >= cenaBabicky) {
         susenky -= cenaBabicky;
@@ -53,7 +51,6 @@ document.getElementById("babicka").onclick = function() {
     }
 };
 
-// továrna – přidává +1 za sekundu
 document.getElementById("tovarna").onclick = function() {
     if (susenky >= cenaTovarny) {
         susenky -= cenaTovarny;
@@ -66,7 +63,6 @@ document.getElementById("tovarna").onclick = function() {
     }
 };
 
-// zlatá sušenka – risk
 document.getElementById("zlata").onclick = function() {
     if (Math.random() < 0.5) {
         susenky += 100;
@@ -78,7 +74,6 @@ document.getElementById("zlata").onclick = function() {
     vykresli();
 };
 
-// automatické přičítání každou sekundu
 setInterval(() => {
     if (zaSekundu > 0) {
         susenky += zaSekundu;
