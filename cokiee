@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie Clicker 🍪</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Cookie Clicker</h1>
+
+    <div class="info">
+        <p>Sušenek: <span id="skore">0</span></p>
+        <p class="malé">za sekundu: <span id="zaSekundu">0</span> | za klik: <span id="zaKlikInfo">1</span></p>
+    </div>
+
+    <div class="susenka-box">
+        <button id="susenka">🍪</button>
+    </div>
+
+    <h2>Obchod</h2>
+    <div class="obchod">
+        <button id="babicka">
+            <span class="ikona">👵</span>
+            <span class="nazev">Babička</span>
+            <span class="cena">Cena: <span id="cenaBabicky">10</span></span>
+        </button>
+
+        <button id="tovarna">
+            <span class="ikona">🏭</span>
+            <span class="nazev">Továrna</span>
+            <span class="cena">Cena: <span id="cenaTovarny">50</span></span>
+        </button>
+
+        <button id="zlata">
+            <span class="ikona">✨</span>
+            <span class="nazev">Zlatá sušenka</span>
+            <span class="cena">Risk!</span>
+        </button>
+    </div>
+
+    <p id="hlaska"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
